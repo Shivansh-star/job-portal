@@ -17,9 +17,16 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOptions = {
-    origin:'http://localhost:5173',
-    credentials:true
-}
+    origin: [
+        'http://localhost:5173', // or 3000, whatever your local port was
+        'https://your-vercel-app-url.vercel.app' // <-- PASTE YOUR ACTUAL LIVE VERCEL URL HERE
+    ],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+};
+
+app.use(cors(corsOptions));
 
 app.use(cors(corsOptions));
 
