@@ -19,7 +19,7 @@ app.use(cookieParser());
 const corsOptions = {
     origin: [
         'http://localhost:5173', // or 3000, whatever your local port was
-        'https://job-portal-seven-jet.vercel.app/' // <-- PASTE YOUR ACTUAL LIVE VERCEL URL HERE
+        'https://job-portal-seven-jet.vercel.app' // <-- PASTE YOUR ACTUAL LIVE VERCEL URL HERE
     ],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
